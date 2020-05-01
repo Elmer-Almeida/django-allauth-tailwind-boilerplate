@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+Contact |
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-3xl mt-8 text-center tracking-wide uppercase">Send Us A Message</h1>
+
+    {% if contact_form %}
+        {% include 'contact/snippets/form.html' with form=contact_form %}
+    {% endif %}
+
+{% endblock %}

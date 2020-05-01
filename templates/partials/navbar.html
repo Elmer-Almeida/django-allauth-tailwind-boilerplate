@@ -1,0 +1,32 @@
+{% url 'landing' as landing_url %}
+{% url 'about' as about_url %}
+{% url 'contact:view' as contact_url %}
+
+<nav class="nav flex flex-wrap items-center justify-between shadow px-4 py-3 mb-4">
+    <div class="text-2xl text-gray-800 ml-0 md:ml-16">
+        <a href="{{ landing_url }}">Brand Name</a>
+    </div>
+
+    <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+    <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+        <span class="navicon bg-grey-darkest flex items-center relative"></span>
+    </label>
+
+    <ul class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto mr-0 md:mr-16">
+        <li class="mt-2 md:mt-0">
+            <a href="{{ landing_url }}" class="block md:inline-block md:mx-2 py-3 no-underline text-grey-darkest hover:text-black uppercase {% if request.path == landing_url %}font-semibold{% endif %}">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}" class="block md:inline-block md:mx-2 py-3 no-underline text-grey-darkest hover:text-black uppercase {% if request.path == about_url %}font-semibold{% endif %}">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'contact:view' %}" class="block md:inline-block md:mx-2 py-3 no-underline text-grey-darkest hover:text-black uppercase {% if request.path == contact_url %}font-semibold{% endif %}">
+                Contact
+            </a>
+        </li>
+    </ul>
+</nav>

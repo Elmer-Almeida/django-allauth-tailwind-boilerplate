@@ -1,0 +1,40 @@
+{% load widget_tweaks %}
+
+<form action="" method="POST" class="max-w-lg mx-auto px-4 md:px-0 mt-8">
+
+    {% csrf_token %}
+
+    <div class="flex flex-wrap -mx-3 mb-4">
+        <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                {{ form.first_name.label }}
+            </label>
+            {{ form.first_name|add_class:"appearance-none duration-300 ease-in-out block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" }}
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                {{ form.last_name.label }}
+            </label>
+            {{ form.last_name|add_class:"appearance-none duration-300 ease-in-out block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" }}
+        </div>
+    </div>
+
+    <div class="w-full mb-4">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+            {{ form.email.label }}
+        </label>
+        {{ form.email|add_class:"appearance-none duration-300 ease-in-out block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" }}
+    </div>
+
+    <div class="w-full">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+            {{ form.message.label }}
+        </label>
+        {{ form.message|add_class:"appearance-none duration-300 ease-in-out block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" }}
+    </div>
+
+    <p class="mt-2 text-gray-700 text-center text-sm">We do not sell or rent your information.</p>
+
+    <input type="submit" class="mt-4 bg-blue-600 py-2 px-3 rounded text-white cursor-pointer hover:bg-blue-800 duration-200 ease-in-out uppercase tracking-wide block mx-auto" value="Send Message">
+
+</form>
